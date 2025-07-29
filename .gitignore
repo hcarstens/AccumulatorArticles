@@ -1,0 +1,8 @@
+
+_site/
+*.html
+**/Thumbs.db
+**/.DS_Store
+.quarto/
+__pycache__/
+

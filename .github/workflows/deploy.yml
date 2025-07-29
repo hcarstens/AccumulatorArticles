@@ -1,0 +1,45 @@
+name: Render Quarto and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Render site
+        run: quarto render
+      - name: Draft tweet thread
+        if: env.OPENAI_API_KEY != ''
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          ABSTRACT=$(grep -m1 '^abstract:' index.qmd | cut -d ':' -f2- | xargs || true)
+          if [ -z "$ABSTRACT" ]; then
+            echo "No abstract found; skipping tweet thread generation." && exit 0
+          fi
+          echo "Calling OpenAI API..."
+          curl https://api.openai.com/v1/chat/completions \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -d '{
+              "model": "gpt-3.5-turbo",
+              "messages": [
+                {"role": "system", "content": "Create a short tweet thread summarizing the following abstract."},
+                {"role": "user", "content": "'$ABSTRACT'"}
+              ]
+            }' > tweet-thread.json
+          echo "Tweet thread saved to tweet-thread.json"
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: _site
+          token: ${{ secrets.GITHUB_TOKEN }}
+

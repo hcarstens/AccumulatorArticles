@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "content-series/docs/architecture.html",
+    "href": "content-series/docs/architecture.html",
+    "title": "Architecture",
+    "section": "",
+    "text": "Architecture\nRepository conventions, naming schemes, and CI pipeline documentation."
+  },
+  {
+    "objectID": "content-series/src/article_01_intro/01_intro.html",
+    "href": "content-series/src/article_01_intro/01_intro.html",
+    "title": "Accumultor Series",
+    "section": "",
+    "text": "Content coming soon."
+  },
+  {
+    "objectID": "STYLEGUIDE.html",
+    "href": "STYLEGUIDE.html",
+    "title": "Style Guide",
+    "section": "",
+    "text": "This project favors straightforward code that respects the developer’s liberty to shape things as needed. Keep contributions clean and minimal.\n\n\n\nStick with simple, readable code over clever one-liners.\nUse standard libraries before reaching for external dependencies.\nDocument your work clearly, but avoid needless bureaucracy.\nConsistent indentation with four spaces; no hard tabs.\nEmbrace contributions that promote self-reliance and minimize mandatory tooling.\n\n\n\n\nWrite commit messages that briefly explain what changed and why. Stay focused on substance without fluffy language."
+  },
+  {
+    "objectID": "STYLEGUIDE.html#coding-principles",
+    "href": "STYLEGUIDE.html#coding-principles",
+    "title": "Style Guide",
+    "section": "",
+    "text": "Stick with simple, readable code over clever one-liners.\nUse standard libraries before reaching for external dependencies.\nDocument your work clearly, but avoid needless bureaucracy.\nConsistent indentation with four spaces; no hard tabs.\nEmbrace contributions that promote self-reliance and minimize mandatory tooling."
+  },
+  {
+    "objectID": "STYLEGUIDE.html#commit-messages",
+    "href": "STYLEGUIDE.html#commit-messages",
+    "title": "Style Guide",
+    "section": "",
+    "text": "Write commit messages that briefly explain what changed and why. Stay focused on substance without fluffy language."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Accumultor Series",
+    "section": "",
+    "text": "Accumultor Series\nWelcome to the Accumultor Series Quarto site."
+  },
+  {
+    "objectID": "content-series/docs/style-guide.html",
+    "href": "content-series/docs/style-guide.html",
+    "title": "Style Guide",
+    "section": "",
+    "text": "Style Guide\nTone, citation style, and tweet length rules."
+  }
+]

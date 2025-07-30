@@ -1,0 +1,7 @@
+---
+title: "Articles"
+listing:
+  contents: .
+---
+
+Welcome to the articles section.

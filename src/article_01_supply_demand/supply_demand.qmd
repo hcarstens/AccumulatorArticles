@@ -10,6 +10,7 @@ jupyter: python3
 
 * **Standard model.** Price adjusts so that quantity supplied equals quantity demanded  
   \\(Q_s(P) = Q_d(P)\\).
+  **Figure @fig-supply-demand**
 
 * **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
   Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
@@ -26,34 +27,69 @@ Demand shifts outward at 2 % per period:
 
 $$ D_t(P) = (1+g)^t\,D_0(P),\quad g=0.02 $$
 
-Below, we solve for the new price each period and plot the path.
+As **Figure @fig-price-path** shows, we solve for the new price each period and plot the path.
 
 ```{python}
+#| label: fig-supply-demand            # <‑‑ optional, lets you cross‑reference
+#| fig-cap: "Classic Supply Demand Curve"
+#| fig-alt: "Line chart showing classic supply demand curve"
+#| fig-width: 6                     # inches (optional)
+#| fig-height: 3.5                  #         "
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Parameters
-Qs = 100           # fixed supply (units)
-P0 = 10            # initial equilibrium price
-g  = 0.02          # 2 % continuous demand growth
-t  = np.arange(0, 25)   # 25 periods
+# ---- 1. Curve parameters ------------------------------------
+demand_intercept = 200     # Qd when P = 0
+demand_slope     = 10      # negative slope → downward‑sloping demand
+supply_slope     = 10      # positive slope → upward‑sloping supply
+#   (These choices make the two curves cross at P = $10, Q = 100.)
 
-# Linear demand curve chosen to hit (P0, Qs) at t=0:  Qd = a - bP
-a = Qs + 10
-b = (a - Qs) / P0
+# ---- 2. Price grid & curve equations ------------------------
+P  = np.linspace(0, 20, 100)           # price range
+Qd = demand_intercept - demand_slope*P # demand:  Qd = a – bP
+Qs = supply_slope*P                    # supply:  Qs = dP
 
-def price_path(periods):
-    shift = np.exp(g * periods)      # multiplicative demand shift
-    return (a * shift - Qs) / b      # new equilibrium price
+# ---- 3. Equilibrium (solve  Qd = Qs) ------------------------
+Pe = demand_intercept / (demand_slope + supply_slope)  # = 10
+Qe = supply_slope * Pe                                 # = 100
 
-prices = price_path(t)
-
-# Plot
+# ---- 4. Plot ------------------------------------------------
 plt.figure()
+plt.plot(Qd, P, label="Demand",  lw=2)  # (x = quantity, y = price)
+plt.plot(Qs, P, label="Supply",  lw=2)
+plt.scatter(Qe, Pe, color="black", zorder=5)
+plt.axvline(Qe, color="gray", ls="--")
+plt.axhline(Pe, color="gray", ls="--")
+plt.text(Qe + 4, Pe + 0.5, f"Equilibrium\n(Q={Qe:.0f}, P=${Pe:.0f})")
+
+plt.xlabel("Quantity")
+plt.ylabel("Price")
+plt.title("Classic Supply and Demand Curves")
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python}
+#| label: fig-price-path            # <‑‑ optional, lets you cross‑reference
+#| fig-cap: "Price path with 2 % demand growth and fixed supply"
+#| fig-alt: "Line chart showing price rising from $10 to ~$78 over 24 periods"
+#| fig-width: 6                     # inches (optional)
+#| fig-height: 3.5                  #         "
+import numpy as np
+import matplotlib.pyplot as plt
+
+Qs, P0, g = 100, 10, 0.02
+t = np.arange(0, 25)
+a, b = Qs + 10, (Qs + 10 - Qs) / P0
+prices = (a * np.exp(g * t) - Qs) / b
+
 plt.plot(t, prices, label="Equilibrium price")
-plt.axhline(P0, linestyle="--", label="Initial price $10")
-plt.title("Price path with 2 % demand growth & fixed supply")
+plt.axhline(P0, ls="--", label="Initial price $10")
+plt.title("Price path with fixed supply")
 plt.xlabel("Period")
 plt.ylabel("Price")
 plt.legend()
 plt.tight_layout()
+```

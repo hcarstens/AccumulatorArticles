@@ -10,6 +10,8 @@ it to GitHub Pages from the `gh-pages` branch. If an `OPENAI_API_KEY` secret is
 present, the workflow also calls the OpenAI API to generate a tweet thread based
 on the article's abstract.
 
+**Write in .qmd ➜ preview locally ➜ commit ➜ CI renders & tests ➜ publish static site—**repeat for every article or update.
+
 This repository demonstrates a CI setup with spell checking, link checking, and pytest.
 
 For more information visit [GitHub](https://github.com) or check out [Example](https://example.com).

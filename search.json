@@ -4,7 +4,7 @@
     "href": "src/index.html",
     "title": "Articles",
     "section": "",
-    "text": "Welcome to the articles section.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to the articles section.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,5 +12,12 @@
     "title": "Accumultor Series",
     "section": "",
     "text": "Accumultor Series\nWelcome to the Accumultor Series Quarto site."
+  },
+  {
+    "objectID": "src/article_01_supply_demand/01_intro.html",
+    "href": "src/article_01_supply_demand/01_intro.html",
+    "title": "Accumultor Series",
+    "section": "",
+    "text": "Content coming soon."
   }
 ]

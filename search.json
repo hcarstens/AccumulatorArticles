@@ -14,6 +14,27 @@
     "text": "Content coming soon."
   },
   {
+    "objectID": "REQUIREMENTS.html",
+    "href": "REQUIREMENTS.html",
+    "title": "Project Requirements",
+    "section": "",
+    "text": "This repository uses Quarto for site generation and Python for the example scripts and tests.\n\n\nInstall the Quarto command line tools (version 1.3 or higher). After installation you can render the site locally with:\nquarto render\n\n\n\nCreate a virtual environment and install the Python packages listed in requirements.txt:\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\nRun tests with:\npytest"
+  },
+  {
+    "objectID": "REQUIREMENTS.html#quarto-cli",
+    "href": "REQUIREMENTS.html#quarto-cli",
+    "title": "Project Requirements",
+    "section": "",
+    "text": "Install the Quarto command line tools (version 1.3 or higher). After installation you can render the site locally with:\nquarto render"
+  },
+  {
+    "objectID": "REQUIREMENTS.html#python",
+    "href": "REQUIREMENTS.html#python",
+    "title": "Project Requirements",
+    "section": "",
+    "text": "Create a virtual environment and install the Python packages listed in requirements.txt:\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\nRun tests with:\npytest"
+  },
+  {
     "objectID": "STYLEGUIDE.html",
     "href": "STYLEGUIDE.html",
     "title": "Style Guide",

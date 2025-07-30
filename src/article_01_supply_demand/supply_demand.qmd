@@ -2,7 +2,10 @@
 title: "When Supply Is Fixed but Demand Keeps Growing"
 author: "Henry Carstens"
 date: 2025-07-29
-format: html
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
 jupyter: python3
 ---
 

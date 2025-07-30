@@ -23,6 +23,7 @@ The **accumultor-series** repository contains a collection of simple accumulator
 ## Getting Started
 
 Clone the repo and dive into the code. There are no elaborate setup steps or rigid rules, giving you the flexibility to tailor things to your needs.
+For tooling and environment details see [REQUIREMENTS.md](REQUIREMENTS.md).
 
 ## License
 

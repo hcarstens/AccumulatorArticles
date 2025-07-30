@@ -1,6 +1,6 @@
 ---
 title: "When Supply Is Fixed but Demand Keeps Growing"
-author: "Henry Carstens"
+author: "Henry Carstens and Vertical Solutions"
 date: 2025-07-29
 format:
   html:
@@ -13,24 +13,6 @@ jupyter: python3
 
 * **Standard model.** Price adjusts so that quantity supplied equals quantity demanded  
   \\(Q_s(P) = Q_d(P)\\).
-  **Figure @fig-supply-demand**
-
-* **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
-  Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
-  because \\(Q_s\\) cannot rise.
-
-> **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
-
----
-
-## 2 Illustrative model — 2 % continuous demand growth
-
-We start at an equilibrium price of \$10 and supply of 100 units.  
-Demand shifts outward at 2 % per period:
-
-$$ D_t(P) = (1+g)^t\,D_0(P),\quad g=0.02 $$
-
-As **Figure @fig-price-path** shows, we solve for the new price each period and plot the path.
 
 ```{python}
 #| label: fig-supply-demand            # <‑‑ optional, lets you cross‑reference
@@ -38,7 +20,7 @@ As **Figure @fig-price-path** shows, we solve for the new price each period and
 #| fig-alt: "Line chart showing classic supply demand curve"
 #| fig-width: 6                     # inches (optional)
 #| fig-height: 3.5                  #         "
-#| fig-link: "true"                  # display inline
+#| fig-link: figure_1                 # display inline
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -74,6 +56,22 @@ plt.tight_layout()
 plt.show()
 
 ```
+  **Figure @fig-supply-demand**
+
+* **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
+  Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
+  because \\(Q_s\\) cannot rise.
+
+> **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
+
+---
+
+## 2 Illustrative model — 2 % continuous demand growth
+
+We start at an equilibrium price of \$10 and supply of 100 units.  
+Demand shifts outward at 2 % per period:
+
+$$ D_t(P) = (1+g)^t\,D_0(P),\quad g=0.02 $$
 
 ```{python}
 #| label: fig-price-path            # <‑‑ optional, lets you cross‑reference
@@ -81,7 +79,7 @@ plt.show()
 #| fig-alt: "Line chart showing price rising from $10 to ~$78 over 24 periods"
 #| fig-width: 6                     # inches (optional)
 #| fig-height: 3.5                  #         "
-#| fig-link: "true"                  # display inline
+#| fig-link: figure_2                  # display inline
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -98,3 +96,6 @@ plt.ylabel("Price")
 plt.legend()
 plt.tight_layout()
 ```
+As **Figure @fig-price-path** shows, we solve for the new price each period and plot the path.
+
+

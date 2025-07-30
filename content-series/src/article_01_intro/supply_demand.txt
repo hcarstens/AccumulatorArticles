@@ -1,0 +1,59 @@
+---
+title: "When Supply Is Fixed but Demand Keeps Growing"
+author: "Henry Carstens"
+date: 2025-07-29
+format: html
+jupyter: python3
+---
+
+## 1 Supply, Demand, and the Special Case of a Fixed Supply
+
+* **Standard model.** Price adjusts so that quantity supplied equals quantity demanded  
+  \\(Q_s(P) = Q_d(P)\\).
+
+* **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
+  Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
+  because \\(Q_s\\) cannot rise.
+
+> **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
+
+---
+
+## 2 Illustrative model — 2 % continuous demand growth
+
+We start at an equilibrium price of \$10 and supply of 100 units.  
+Demand shifts outward at 2 % per period:
+
+$$ D_t(P) = (1+g)^t\,D_0(P),\quad g=0.02 $$
+
+Below, we solve for the new price each period and plot the path.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+Qs = 100           # fixed supply (units)
+P0 = 10            # initial equilibrium price
+g  = 0.02          # 2 % continuous demand growth
+t  = np.arange(0, 25)   # 25 periods
+
+# Linear demand curve chosen to hit (P0, Qs) at t=0:  Qd = a - bP
+a = Qs + 10
+b = (a - Qs) / P0
+
+def price_path(periods):
+    shift = np.exp(g * periods)      # multiplicative demand shift
+    return (a * shift - Qs) / b      # new equilibrium price
+
+prices = price_path(t)
+
+# Plot
+plt.figure()
+plt.plot(t, prices, label="Equilibrium price")
+plt.axhline(P0, linestyle="--", label="Initial price $10")
+plt.title("Price path with 2 % demand growth & fixed supply")
+plt.xlabel("Period")
+plt.ylabel("Price")
+plt.legend()
+plt.tight_layout()

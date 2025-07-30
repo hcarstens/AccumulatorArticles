@@ -7,7 +7,8 @@ if [ $# -lt 1 ]; then
 fi
 
 article_name="$1"
-base_dir="$(dirname "$0")/articles/$article_name"
+# Place new articles under the shared src directory
+base_dir="$(dirname "$0")/../src/$article_name"
 
 if [ -e "$base_dir" ]; then
     echo "Error: directory $base_dir already exists" >&2

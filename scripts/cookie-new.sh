@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+# Store all generated articles under the shared src directory
 BASE_DIR="src"
 mkdir -p "$BASE_DIR"
 

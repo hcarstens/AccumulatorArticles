@@ -27,6 +27,9 @@ The **accumultor-series** repository contains a collection of simple accumulator
 Clone the repo and dive into the code. There are no elaborate setup steps or rigid rules, giving you the flexibility to tailor things to your needs.
 For tooling and environment details see [REQUIREMENTS.md](REQUIREMENTS.md).
 
+Use `scripts/cookie-new.sh` or `./scaffold_article.sh <name>` to start a new
+article. Both scripts place the resulting directory under `src/`.
+
 ## License
 
 This project is released into the public domain. Use it as you see fit, and share any improvements you make.

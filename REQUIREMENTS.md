@@ -10,6 +10,12 @@ Install the [Quarto](https://quarto.org/docs/get-started/) command line tools (v
 quarto render
 ```
 
+To preview the site and automatically refresh on changes, run:
+
+```bash
+quarto preview
+```
+
 ## Python
 
 Create a virtual environment and install the Python packages listed in `requirements.txt`:
@@ -25,4 +31,10 @@ Run tests with:
 ```bash
 pytest
 ```
+
+## Optional tweet generation
+
+If you want to preview the automatic tweet thread feature used in CI,
+set the `OPENAI_API_KEY` environment variable before running the
+workflow. Without this key the deployment will skip the tweet step.
 

@@ -18,14 +18,14 @@
     "href": "REQUIREMENTS.html",
     "title": "Project Requirements",
     "section": "",
-    "text": "This repository uses Quarto for site generation and Python for the example scripts and tests.\n\n\nInstall the Quarto command line tools (version 1.3 or higher). After installation you can render the site locally with:\nquarto render\n\n\n\nCreate a virtual environment and install the Python packages listed in requirements.txt:\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\nRun tests with:\npytest"
+    "text": "This repository uses Quarto for site generation and Python for the example scripts and tests.\n\n\nInstall the Quarto command line tools (version 1.3 or higher). After installation you can render the site locally with:\nquarto render\nTo preview the site and automatically refresh on changes, run:\nquarto preview\n\n\n\nCreate a virtual environment and install the Python packages listed in requirements.txt:\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\nRun tests with:\npytest\n\n\n\nIf you want to preview the automatic tweet thread feature used in CI, set the OPENAI_API_KEY environment variable before running the workflow. Without this key the deployment will skip the tweet step."
   },
   {
     "objectID": "REQUIREMENTS.html#quarto-cli",
     "href": "REQUIREMENTS.html#quarto-cli",
     "title": "Project Requirements",
     "section": "",
-    "text": "Install the Quarto command line tools (version 1.3 or higher). After installation you can render the site locally with:\nquarto render"
+    "text": "Install the Quarto command line tools (version 1.3 or higher). After installation you can render the site locally with:\nquarto render\nTo preview the site and automatically refresh on changes, run:\nquarto preview"
   },
   {
     "objectID": "REQUIREMENTS.html#python",
@@ -33,6 +33,13 @@
     "title": "Project Requirements",
     "section": "",
     "text": "Create a virtual environment and install the Python packages listed in requirements.txt:\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\nRun tests with:\npytest"
+  },
+  {
+    "objectID": "REQUIREMENTS.html#optional-tweet-generation",
+    "href": "REQUIREMENTS.html#optional-tweet-generation",
+    "title": "Project Requirements",
+    "section": "",
+    "text": "If you want to preview the automatic tweet thread feature used in CI, set the OPENAI_API_KEY environment variable before running the workflow. Without this key the deployment will skip the tweet step."
   },
   {
     "objectID": "STYLEGUIDE.html",

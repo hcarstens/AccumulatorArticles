@@ -35,7 +35,7 @@ As **Figure @fig-price-path** shows, we solve for the new price each period and
 #| fig-alt: "Line chart showing classic supply demand curve"
 #| fig-width: 6                     # inches (optional)
 #| fig-height: 3.5                  #         "
-#| fig-link: false                  # display inline
+#| fig-link: "true"                  # display inline
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -78,7 +78,7 @@ plt.show()
 #| fig-alt: "Line chart showing price rising from $10 to ~$78 over 24 periods"
 #| fig-width: 6                     # inches (optional)
 #| fig-height: 3.5                  #         "
-#| fig-link: false                  # display inline
+#| fig-link: "true"                  # display inline
 import numpy as np
 import matplotlib.pyplot as plt
 

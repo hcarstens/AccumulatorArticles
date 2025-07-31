@@ -17,8 +17,8 @@ jupyter: python3
 **Figure @fig-supply-demand**
 
 ```{python}
-#| label: fig-supply-demand-fixed            # <‑‑ optional, lets you cross‑reference
-#| fig-cap: "Demand Curve when Supply is Fixed"
+#| label: fig-supply-demand            # <‑‑ optional, lets you cross‑reference
+#| fig-cap: "Classic supply and demand"
 #| fig-alt: "Line chart showing classic supply demand curve"
 #| fig-width: 6                     # inches (optional)
 #| fig-height: 3.5                  #         "
@@ -65,6 +65,40 @@ plt.show()
   because \\(Q_s\\) cannot rise.
 
 **Figure @fig-supply-demand-fixed**
+
+```{python}
+#| label: fig-supply-demand-fixed
+#| fig-cap: "Demand shift when supply is fixed"
+#| fig-alt: "Vertical supply with two demand curves"
+#| fig-width: 6
+#| fig-height: 3.5
+#| fig-link: figure_2
+import numpy as np
+import matplotlib.pyplot as plt
+
+fixed_Qs = 100
+P = np.linspace(0, 20, 100)
+
+base_intercept = 200
+demand_slope = 10
+
+Qd0 = base_intercept - demand_slope * P
+shift = 20
+Qd1 = base_intercept + shift - demand_slope * P
+
+P1 = (base_intercept + shift - fixed_Qs) / demand_slope
+
+plt.figure()
+plt.plot(Qd0, P, label="Initial demand", lw=2)
+plt.plot(Qd1, P, label="Shifted demand", lw=2)
+plt.axvline(fixed_Qs, color="C1", label="Fixed supply", lw=2)
+plt.scatter(fixed_Qs, P1, color="black", zorder=5)
+plt.xlabel("Quantity")
+plt.ylabel("Price")
+plt.title("Fixed supply with outward demand shift")
+plt.legend()
+plt.tight_layout()
+```
 
 > **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
 

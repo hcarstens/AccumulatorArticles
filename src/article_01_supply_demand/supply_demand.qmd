@@ -14,8 +14,6 @@ jupyter: python3
 * **Standard model.** Price adjusts so that quantity supplied equals quantity demanded  
   \\(Q_s(P) = Q_d(P)\\).
 
-**Figure @fig-supply-demand**
-
 ```{python}
 #| label: fig-supply-demand            # <‑‑ optional, lets you cross‑reference
 #| fig-cap: "Classic supply and demand"
@@ -58,13 +56,11 @@ plt.tight_layout()
 plt.show()
 ```
 
-## 2 Supply, Demand, and the Special Case of Fixed Supply
+## 2 Supply, Demand and the Special Case of Fixed Supply
 
 * **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
   Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
   because \\(Q_s\\) cannot rise.
-
-**Figure @fig-supply-demand-fixed**
 
 ```{python}
 #| label: fig-supply-demand-fixed
@@ -134,6 +130,9 @@ plt.ylabel("Price")
 plt.legend()
 plt.tight_layout()
 ```
-As **Figure @fig-price-path** shows, we solve for the new price each period and plot the path.
+The price-path with fixed supply shows continuous accelerated increase in price
 
+## 4 Infinite Supply with Drift
+
+Compare and contrast price growth under fixed supply with price growth under infinite supply.
 

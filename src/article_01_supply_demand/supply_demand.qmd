@@ -9,10 +9,12 @@ format:
 jupyter: python3
 ---
 
-## 1 Supply, Demand, and the Special Case of a Fixed Supply
+## 1 Supply, Demand, and the Standard Model
 
 * **Standard model.** Price adjusts so that quantity supplied equals quantity demanded  
   \\(Q_s(P) = Q_d(P)\\).
+
+**Figure @fig-supply-demand**
 
 ```{python}
 #| label: fig-supply-demand            # <‑‑ optional, lets you cross‑reference
@@ -54,22 +56,24 @@ plt.title("Classic Supply and Demand Curves")
 plt.legend()
 plt.tight_layout()
 plt.show()
-
 ```
-  **Figure @fig-supply-demand**
+
+## 2 Supply, Demand, and the Special Case of Fixed Supply
 
 * **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
   Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
   because \\(Q_s\\) cannot rise.
 
+**Figure @fig-supply-demand-fixed**
+
 > **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
 
 ---
 
-## 2 Illustrative model — 2 % continuous demand growth
+## 3 Fixed Supply with Drift
 
 We start at an equilibrium price of \$10 and supply of 100 units.  
-Demand shifts outward at 2 % per period:
+Demand shifts outward at 2 % per period (the Drift):
 
 $$ D_t(P) = (1+g)^t\,D_0(P),\quad g=0.02 $$
 

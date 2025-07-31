@@ -8,6 +8,8 @@ format:
     code-summary: "Show code"
 jupyter: python3
 ---
+Bitcoin's 21 million coin limit means supply cannot expand.
+Growing demand therefore pushes price upward. The US dollar faces no such cap; more dollars can be issued whenever policymakers choose.
 
 ## 1 Supply, Demand, and the Standard Model
 
@@ -58,9 +60,9 @@ plt.show()
 
 ## 2 Supply, Demand and the Special Case of Fixed Supply
 
-* **Fixed‑supply scenario.** Suppose total supply is capped (land, Bitcoin, seats in a stadium).  
+* **Fixed-supply scenario.** Bitcoin's total supply is capped at 21 million coins.
   Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
-  because \\(Q_s\\) cannot rise.
+  because \(Q_s\) cannot rise. The US dollar is the opposite: supply expands whenever more dollars are printed.
 
 ```{python}
 #| label: fig-supply-demand-fixed
@@ -161,5 +163,5 @@ Under unlimited supply, price does not rise; it remains anchored at $10 despite 
 
 ## Conclusion
 
-Fixed supply leads to accelerating price appreciation, while infinite supply keeps prices stable.
+Bitcoin's fixed supply leads to accelerating price appreciation, while the infinitely expandable US dollar supply keeps prices stable.
 

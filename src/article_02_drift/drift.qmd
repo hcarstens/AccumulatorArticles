@@ -1,0 +1,59 @@
+---
+title: "Drift and the Fed's 2% Tailwind"
+author: "Henry Carstens"
+date: 2025-07-31
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+jupyter: python3
+---
+
+:::{.tldr}
+**TL;DR** The Federal Reserve targets 2% inflation. Since 2000 the S&P 500 has only fallen in seven out of twenty four years (about 29%). The index returned roughly 6.4% per year on average, so the 2% inflation drift amounts to a 31% head start on each year's gains.
+:::
+
+## Drift as Policy
+
+When central bankers aim for 2% inflation, they effectively build a gentle upward drift into nominal prices. This background push makes negative market years relatively uncommon over long periods.
+
+```{python}
+import pandas as pd
+from scripts.plot_style import set_plot_style
+import matplotlib.pyplot as plt
+
+set_plot_style()
+
+url = "https://raw.githubusercontent.com/datasets/s-and-p-500/master/data/data.csv"
+# load monthly data and compute year-end levels
+all_data = pd.read_csv(url, parse_dates=["Date"])
+use = all_data[all_data["Date"] >= "1999-01-01"]
+annual = use.set_index("Date")["SP500"].resample("Y").last()
+
+# returns for 2000 onward
+returns = annual.pct_change().dropna()
+returns = returns[returns.index.year >= 2000]
+
+down_years = returns[returns < 0]
+down_pct = len(down_years) / len(returns) * 100
+avg_return = returns.mean() * 100
+head_start = 2 / avg_return * 100
+
+fig, ax = plt.subplots(figsize=(8,4))
+ax.plot(annual.index.year, annual.values, marker="o", label="Year-end close")
+ax.scatter(down_years.index.year, annual.loc[down_years.index], color="red", label="Down year")
+ax.set_title("S&P 500 Year-End Levels")
+ax.set_ylabel("Index level")
+ax.set_xlabel("Year")
+ax.legend()
+plt.tight_layout()
+fig
+```
+
+```{python}
+print(f"Down years: {len(down_years)} out of {len(returns)} ({down_pct:.1f}% of the time)")
+print(f"Average annual return: {avg_return:.2f}%")
+print(f"2% / average return = {head_start:.1f}% head start")
+```
+
+The S&P 500 closed lower than the prior year in only around 29% of years since 2000. With average gains near 6% per year, the Fed's 2% inflation drift provides a material boost before companies even grow earnings.

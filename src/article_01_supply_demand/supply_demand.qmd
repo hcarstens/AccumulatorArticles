@@ -132,7 +132,34 @@ plt.tight_layout()
 ```
 The price-path with fixed supply shows continuous accelerated increase in price
 
-## 4 Infinite Supply with Drift
+## 4 Price Change with Infinite Supply
 
-Compare and contrast price growth under fixed supply with price growth under infinite supply.
+With limitless production capacity, suppliers meet any demand at the going price. Even with the same
+2 % demand drift, the equilibrium price stays flat.
+
+```{python}
+#| label: fig-price-path-infinite
+#| fig-cap: "Price path with infinite supply and 2 % demand growth"
+#| fig-alt: "Flat price line at $10 over 24 periods"
+#| fig-width: 6
+#| fig-height: 3.5
+import numpy as np
+import matplotlib.pyplot as plt
+
+P0 = 10
+t = np.arange(0, 25)
+prices = np.full_like(t, P0, dtype=float)
+
+plt.plot(t, prices, label="Equilibrium price")
+plt.title("Price path with infinite supply")
+plt.xlabel("Period")
+plt.ylabel("Price")
+plt.legend()
+plt.tight_layout()
+```
+Under unlimited supply, price does not rise; it remains anchored at $10 despite demand growth.
+
+## Conclusion
+
+Fixed supply leads to accelerating price appreciation, while infinite supply keeps prices stable.
 

@@ -139,32 +139,44 @@ Compare that with unlimited supply (like a fiat currency)...
 
 ## 4 Price Change with Infinite Supply
 
-With limitless production capacity, suppliers meet any demand at the going price. Even with the same
-a steady 2% demand increase, the equilibrium price stays flat but prices will fall if 
-demand falls because now demand is doing all the work.
+With limitless production capacity, suppliers meet any demand at the going price. Demand grows at
+2% per period so the demand curve shifts outward, but price stays anchored while quantity expands.
 
 ```{python}
 #| label: fig-price-path-infinite
-#| fig-cap: "Price path with infinite supply and 2 % demand growth"
-#| fig-alt: "Flat price line at $10 over 24 periods"
+#| fig-cap: "Infinite supply with outward demand growth"
+#| fig-alt: "Horizontal supply line with two demand curves"
 #| fig-width: 6
 #| fig-height: 3.5
 import numpy as np
 import matplotlib.pyplot as plt
 
 P0 = 10
-t = np.arange(0, 25)
-prices = np.full_like(t, P0, dtype=float)
+P = np.linspace(0, 20, 100)
 
-plt.plot(t, prices, label="Equilibrium price")
-plt.title("Price path with infinite supply")
-plt.xlabel("Period")
+base_intercept = 200
+demand_slope = 10
+g = 0.02
+periods = 25
+intercept_growth = base_intercept * np.exp(g * periods)
+
+Qd0 = base_intercept - demand_slope * P
+Qd1 = intercept_growth - demand_slope * P
+Q1 = intercept_growth - demand_slope * P0
+
+plt.figure()
+plt.plot(Qd0, P, label="Initial demand", lw=2)
+plt.plot(Qd1, P, label=f"Demand after {periods} periods", lw=2)
+plt.axhline(P0, color="C1", label="Infinite supply", lw=2)
+plt.scatter(Q1, P0, color="black", zorder=5)
+plt.xlabel("Quantity")
 plt.ylabel("Price")
+plt.title("Infinite supply with outward demand growth")
 plt.legend()
 plt.tight_layout()
 ```
-Under unlimited supply, price does not rise; it remains anchored at $10 despite demand growth.
-If demand were to taper off, price would fall.
+Under unlimited supply, price does not rise; it remains anchored at $10 even as demand grows.
+Quantity adjusts instead, sliding rightward along the horizontal supply line.
 
 ## Conclusion
 

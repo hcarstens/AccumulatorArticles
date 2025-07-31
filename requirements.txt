@@ -2,3 +2,4 @@ matplotlib
 seaborn
 numpy
 pytest
+pandas

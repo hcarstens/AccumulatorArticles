@@ -1,5 +1,5 @@
 ---
-title: "When Supply Is Fixed but Demand Keeps Growing"
+title: "BTC: Fixed Supply and Growing Demand"
 author: "Henry Carstens and Vertical Solutions"
 date: 2025-07-29
 format:
@@ -11,7 +11,7 @@ jupyter: python3
 Bitcoin's 21 million coin limit means supply cannot expand.
 Growing demand therefore pushes price upward. Fiat currencies like the US dollar 
 face no such cap; more dollars can be issued whenever policymakers choose increasing 
-downward pressure on their value(price).
+downward pressure on the fiat's value(price). More simply: appeciation vs depreciation.
 
 ## 1 Supply and Demand in the Standard Model
 
@@ -103,7 +103,7 @@ plt.tight_layout()
 > **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
 How steep? Look here...
 
-## 3 Fixed Supply plus Increasing Demand
+## 3 Price with Fixed Supply and Increasing Demand
 
 We start at an equilibrium price of \$10 and supply of 100 units.  
 Demand shifts outward at 2% per period (the Drift):
@@ -139,8 +139,9 @@ Compare that with unlimited supply (like a fiat currency)...
 
 ## 4 Price Change with Infinite Supply
 
-With limitless production capacity, suppliers meet any demand at the going price. Demand grows at
-2% per period so the demand curve shifts outward, but price stays anchored while quantity expands.
+With limitless production capacity, suppliers meet any demand at the going price. 
+Demand grows at 2% per period so the demand curve shifts outward, 
+but price stays anchored while supply expands.
 
 ```{python}
 #| label: fig-price-path-infinite
@@ -183,6 +184,6 @@ Quantity adjusts instead, sliding rightward along the horizontal supply line.
 Bitcoin's fixed supply leads to accelerating price appreciation and 
 the infinite supply of fiat currencies leads to accelerating price depreciation.
 
-Next: Crossing the Chasm: Forecasting portfolio allocation in a world of finite supply 
+**Next:** Crossing the Chasm - forecasting portfolio allocation in a world of finite supply 
 and infinite depreciation.
 

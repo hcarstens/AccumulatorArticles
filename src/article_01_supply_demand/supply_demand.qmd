@@ -17,12 +17,12 @@ jupyter: python3
 **Figure @fig-supply-demand**
 
 ```{python}
-#| label: fig-supply-demand            # <‑‑ optional, lets you cross‑reference
-#| fig-cap: "Classic Supply Demand Curve"
+#| label: fig-supply-demand-fixed            # <‑‑ optional, lets you cross‑reference
+#| fig-cap: "Demand Curve when Supply is Fixed"
 #| fig-alt: "Line chart showing classic supply demand curve"
 #| fig-width: 6                     # inches (optional)
 #| fig-height: 3.5                  #         "
-#| fig-link: figure_1                 # display inline
+#| fig-link: figure_2                 # display inline
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -9,9 +9,11 @@ format:
 jupyter: python3
 ---
 Bitcoin's 21 million coin limit means supply cannot expand.
-Growing demand therefore pushes price upward. The US dollar faces no such cap; more dollars can be issued whenever policymakers choose.
+Growing demand therefore pushes price upward. Fiat currencies like the US dollar 
+face no such cap; more dollars can be issued whenever policymakers choose increasing 
+downward pressure on their value(price).
 
-## 1 Supply, Demand, and the Standard Model
+## 1 Supply and Demand in the Standard Model
 
 * **Standard model.** Price adjusts so that quantity supplied equals quantity demanded  
   \\(Q_s(P) = Q_d(P)\\).
@@ -58,11 +60,11 @@ plt.tight_layout()
 plt.show()
 ```
 
-## 2 Supply, Demand and the Special Case of Fixed Supply
+## 2 Supply and Demand When Supply is Fixed
 
 * **Fixed-supply scenario.** Bitcoin's total supply is capped at 21 million coins.
   Price has to do *all* the work: any outward shift in demand shows up as a higher equilibrium price,
-  because \(Q_s\) cannot rise. The US dollar is the opposite: supply expands whenever more dollars are printed.
+  because \(Q_s\) cannot rise. 
 
 ```{python}
 #| label: fig-supply-demand-fixed
@@ -99,13 +101,12 @@ plt.tight_layout()
 ```
 
 > **Key takeaway:** with a vertical supply curve, even small demand growth turns into steep price appreciation.
+How steep? Look here...
 
----
-
-## 3 Fixed Supply with Drift
+## 3 Fixed Supply plus Increasing Demand
 
 We start at an equilibrium price of \$10 and supply of 100 units.  
-Demand shifts outward at 2 % per period (the Drift):
+Demand shifts outward at 2% per period (the Drift):
 
 $$ D_t(P) = (1+g)^t\,D_0(P),\quad g=0.02 $$
 
@@ -132,12 +133,15 @@ plt.ylabel("Price")
 plt.legend()
 plt.tight_layout()
 ```
-The price-path with fixed supply shows continuous accelerated increase in price
+The price-path with fixed supply shows continuous accelerated increase in price 
+because supply is fixed and price is doing all the work.  
+Compare that with unlimited supply (like a fiat currency)...
 
 ## 4 Price Change with Infinite Supply
 
 With limitless production capacity, suppliers meet any demand at the going price. Even with the same
-2 % demand drift, the equilibrium price stays flat.
+a steady 2% demand increase, the equilibrium price stays flat but prices will fall if 
+demand falls because now demand is doing all the work.
 
 ```{python}
 #| label: fig-price-path-infinite
@@ -160,8 +164,13 @@ plt.legend()
 plt.tight_layout()
 ```
 Under unlimited supply, price does not rise; it remains anchored at $10 despite demand growth.
+If demand were to taper off, price would fall.
 
 ## Conclusion
 
-Bitcoin's fixed supply leads to accelerating price appreciation, while the infinitely expandable US dollar supply keeps prices stable.
+Bitcoin's fixed supply leads to accelerating price appreciation and 
+the infinite supply of fiat currencies leads to accelerating price depreciation.
+
+Next: Crossing the Chasm: Forecasting portfolio allocation in a world of finite supply 
+and infinite depreciation.
 
